@@ -1,35 +1,22 @@
-<script lang="ts">
-    // let novasCategorias: any[] = [{
-    //   "id": "9aee0eff-78d8-4690-a64f-e516654b7f68",
-    //   "nome": "teste 1",
-    //   "status": "ATIVO",
-    //   "criacao": "2023-02-23"
-    // },
-    // {
-    //   "id": "6a354416-e19a-47f4-88cf-c0c58b3a2177",
-    //   "nome": "teste 2",
-    //   "status": "ATIVO",
-    //   "criacao": "2023-02-27"
-    // }]
-
+<script setup lang="ts">
+    import type { Categoria } from '@/models/Categoria.js';
     import { criarCategoria } from '@/models/Categoria.js';
-    import { defineComponent } from 'vue'
+    import { ref } from 'vue'
 
-    export default defineComponent({
-        name: 'CadastroCategorias',
-        data() {
-            return {
-                novasCategorias: [] as any[],
-                nomeCategoria: ''
-            }
-        },
-        methods: {
-            inserirCategoria(nome: string): void {
-                console.log(nome)
-                criarCategoria(nome)
-            }
-        }
-    })
+    const listaCategorias = ref<Categoria[]>([])
+    let nomeCategoria = ''
+
+    function inserirCategoria(nome: string): void {
+        nomeCategoria = ''
+        listaCategorias.value.push(criarCategoria(nome))
+        // console.log(listaCategorias.value)
+    }
+
+    function excluirCategoria(id: string): void {
+        let novaLista = listaCategorias.value.filter(objeto => objeto.id !== id)
+        listaCategorias.value= novaLista
+    }
+
 </script>
 
 <template>
@@ -51,7 +38,7 @@
                 <button
                     id="salvar-categoria"
                     class="btn btn-primary"
-                    @click="inserirCategoria(nomeCategoria)"
+                    @click.prevent="inserirCategoria(nomeCategoria)"
                 >Salvar</button>
             </form>
         </div>
@@ -67,13 +54,13 @@
                     <th scope="col">Ações</th>
                 </tr>
                 </thead>
-                <tbody  v-for="(item, index) in novasCategorias" :key="index">
+                <tbody v-for="(item, index) in listaCategorias" :key="index">
                     <tr>
                         <td>{{item.nome}}</td>
                         <td>{{item.status}}</td>
                         <td>{{item.criacao}}</td>
                         <td>
-                            <button class="btn border border-1" id="delete-btn-${item.id}">
+                            <button class="btn border border-1" @click="excluirCategoria(item.id)">
                                 <svg width="20px" height="20px" viewBox="0 0 24.00 24.00" fill="none" stroke="#ff0000" transform="rotate(0)matrix(1, 0, 0, 1, 0, 0)"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M10 12V17" stroke="#ff0000" stroke-width="1.8640000000000001" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M14 12V17" stroke="#ff0000" stroke-width="1.8640000000000001" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M4 7H20" stroke="#ff0000" stroke-width="0.8640000000000001" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M6 10V18C6 19.6569 7.34315 21 9 21H15C16.6569 21 18 19.6569 18 18V10" stroke="#ff0000" stroke-width="0.8640000000000001" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M9 5C9 3.89543 9.89543 3 11 3H13C14.1046 3 15 3.89543 15 5V7H9V5Z" stroke="#ff0000" stroke-width="0.8640000000000001" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
                             </button>
                         </td>

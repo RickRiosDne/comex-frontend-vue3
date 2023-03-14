@@ -1,7 +1,7 @@
 import { v4 as uuidv4 } from 'uuid';
 
 export interface Categoria {
-    uuid: string;
+    id: string;
     nome: string;
     criacao: string;
     status: string;
@@ -9,7 +9,7 @@ export interface Categoria {
 
 export const criarCategoria = (nome: string): Categoria => {
     return {
-        uuid: uuidv4(),
+        id: uuidv4(),
         nome: nome,
         criacao: new Date().toISOString().substring(0, 10),
         status: 'Ativa'
