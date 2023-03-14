@@ -1,7 +1,3 @@
-<script setup lang="ts">
-
-</script>
-
 <template>
   <nav class="navbar navbar-expand-lg navbar-dark">
                 <div class="offset-1">
@@ -34,7 +30,3 @@
                 </div>
           </nav>
 </template>
-
-<style scoped>
-
-</style>

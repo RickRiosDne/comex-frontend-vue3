@@ -1,5 +1,6 @@
 <script setup lang="ts">
-import BarraNavegacao from './components/BarraNavegacao.vue'
+  import BarraNavegacao from './components/BarraNavegacao.vue'
+  import Rodape from './components/Rodape.vue'
 </script>
 
 <template>
@@ -7,8 +8,12 @@ import BarraNavegacao from './components/BarraNavegacao.vue'
       <BarraNavegacao/>
   </header>
 
-  <main>
+  <!-- <main>
 
-  </main>
+  </main> -->
+
+  <footer>
+    <Rodape />
+  </footer>
 </template>
 
