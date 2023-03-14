@@ -1,6 +1,7 @@
 <script setup lang="ts">
-  import BarraNavegacao from './components/BarraNavegacao.vue'
-  import Rodape from './components/Rodape.vue'
+  import BarraNavegacao from '@/components/BarraNavegacao.vue'
+  import Rodape from '@/components/Rodape.vue'
+  import CadastroCategorias from '@/views/CadastroCategorias.vue'
 </script>
 
 <template>
@@ -8,9 +9,7 @@
       <BarraNavegacao/>
   </header>
 
-  <!-- <main>
-
-  </main> -->
+  <CadastroCategorias />
 
   <footer>
     <Rodape />
