@@ -1,15 +1,15 @@
 <script setup lang="ts">
   import BarraNavegacao from '@/components/BarraNavegacao.vue'
   import Rodape from '@/components/Rodape.vue'
-  import CadastroCategorias from '@/views/CadastroCategorias.vue'
+  import Home from '@/views/Home.vue'
 </script>
 
 <template>
   <header>
-      <BarraNavegacao/>
+    <BarraNavegacao />
   </header>
 
-  <CadastroCategorias />
+  <Home />
 
   <footer>
     <Rodape />
