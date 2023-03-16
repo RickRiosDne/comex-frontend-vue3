@@ -28,44 +28,55 @@
         </div>
         <div class="row">
             <form id="formCategoria" class="offset-3 col-6 d-flex justify-content-center mt-3">
-                <input
-                    id="nome"
-                    class="form-control border-1 rounded"
-                    placeholder="Informe o nome da nova categoria com pelo menos 2 letras..."
-                    v-model="nomeCategoria"
-                    type="text"
-                >
-                <button
-                    id="salvar-categoria"
-                    class="btn btn-primary"
-                    @click.prevent="inserirCategoria(nomeCategoria)"
-                >Salvar</button>
+                <input id="nome" class="form-control border-1 rounded"
+                    placeholder="Informe o nome da nova categoria com pelo menos 2 letras..." v-model="nomeCategoria"
+                    type="text">
+                <button id="salvar-categoria" class="btn btn-primary"
+                    @click.prevent="inserirCategoria(nomeCategoria)">Salvar</button>
             </form>
         </div>
     </section>
 
     <section class="container d-flex justify-content-center mt-4">
-            <table class="table w-75">
-                <thead>
+        <table class="table w-75">
+            <thead>
                 <tr>
                     <th scope="col">Nome</th>
                     <th scope="col">Status</th>
                     <th scope="col">Data de criação</th>
                     <th scope="col">Ações</th>
                 </tr>
-                </thead>
-                <tbody v-for="(item, index) in listaCategorias" :key="index">
-                    <tr>
-                        <td>{{item.nome}}</td>
-                        <td>{{item.status}}</td>
-                        <td>{{item.criacao}}</td>
-                        <td>
-                            <button class="btn border border-1" @click="excluirCategoria(item.id)">
-                                <svg width="20px" height="20px" viewBox="0 0 24.00 24.00" fill="none" stroke="#ff0000" transform="rotate(0)matrix(1, 0, 0, 1, 0, 0)"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M10 12V17" stroke="#ff0000" stroke-width="1.8640000000000001" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M14 12V17" stroke="#ff0000" stroke-width="1.8640000000000001" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M4 7H20" stroke="#ff0000" stroke-width="0.8640000000000001" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M6 10V18C6 19.6569 7.34315 21 9 21H15C16.6569 21 18 19.6569 18 18V10" stroke="#ff0000" stroke-width="0.8640000000000001" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M9 5C9 3.89543 9.89543 3 11 3H13C14.1046 3 15 3.89543 15 5V7H9V5Z" stroke="#ff0000" stroke-width="0.8640000000000001" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
-                            </button>
-                        </td>
-                    </tr>
-                </tbody>
+            </thead>
+            <tbody v-for="(item, index) in listaCategorias" :key="index">
+                <tr>
+                    <td>{{item.nome}}</td>
+                    <td>{{item.status}}</td>
+                    <td>{{item.criacao}}</td>
+                    <td>
+                        <button class="btn border border-1" @click="excluirCategoria(item.id)">
+                            <svg width="20px" height="20px" viewBox="0 0 24.00 24.00" fill="none" stroke="#ff0000"
+                                transform="rotate(0)matrix(1, 0, 0, 1, 0, 0)">
+                                <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                                <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                                <g id="SVGRepo_iconCarrier">
+                                    <path d="M10 12V17" stroke="#ff0000" stroke-width="1.8640000000000001"
+                                        stroke-linecap="round" stroke-linejoin="round"></path>
+                                    <path d="M14 12V17" stroke="#ff0000" stroke-width="1.8640000000000001"
+                                        stroke-linecap="round" stroke-linejoin="round"></path>
+                                    <path d="M4 7H20" stroke="#ff0000" stroke-width="0.8640000000000001"
+                                        stroke-linecap="round" stroke-linejoin="round"></path>
+                                    <path d="M6 10V18C6 19.6569 7.34315 21 9 21H15C16.6569 21 18 19.6569 18 18V10"
+                                        stroke="#ff0000" stroke-width="0.8640000000000001" stroke-linecap="round"
+                                        stroke-linejoin="round"></path>
+                                    <path d="M9 5C9 3.89543 9.89543 3 11 3H13C14.1046 3 15 3.89543 15 5V7H9V5Z"
+                                        stroke="#ff0000" stroke-width="0.8640000000000001" stroke-linecap="round"
+                                        stroke-linejoin="round"></path>
+                                </g>
+                            </svg>
+                        </button>
+                    </td>
+                </tr>
+            </tbody>
         </table>
     </section>
     <div class="erro-listar-categorias text-center"></div>
