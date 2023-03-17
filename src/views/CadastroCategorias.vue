@@ -47,8 +47,8 @@
                     <th scope="col">Ações</th>
                 </tr>
             </thead>
-            <tbody v-for="(item, index) in listaCategorias" :key="index">
-                <tr>
+            <tbody>
+                <tr v-for="(item, index) in listaCategorias" :key="index">
                     <td>{{item.nome}}</td>
                     <td>{{item.status}}</td>
                     <td>{{item.criacao}}</td>
