@@ -1,7 +1,7 @@
 <script setup lang="ts">
   import BarraNavegacao from '@/components/BarraNavegacao.vue'
   import Rodape from '@/components/Rodape.vue'
-  import Home from '@/views/Home.vue'
+
 </script>
 
 <template>
@@ -9,7 +9,7 @@
     <BarraNavegacao />
   </header>
 
-  <Home />
+  <router-view></router-view>
 
   <footer>
     <Rodape />

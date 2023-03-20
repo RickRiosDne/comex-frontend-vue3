@@ -48,7 +48,10 @@
                 </tr>
             </thead>
             <tbody>
-                <tr v-for="(item, index) in listaCategorias" :key="index">
+                <tr v-if="listaCategorias.length === 0">
+                    <td class="text-center" colspan="4">Não tem nenhum item</td>
+                </tr>
+                <tr v-else v-for="(item, index) in listaCategorias" :key="index">
                     <td>{{item.nome}}</td>
                     <td>{{item.status}}</td>
                     <td>{{item.criacao}}</td>
