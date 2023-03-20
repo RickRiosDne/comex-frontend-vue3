@@ -27,16 +27,4 @@ export default {
       return await Promise.reject(err);
     }
   },
-
-  //   getUser() {
-  //     console.log(http);
-  //     http
-  //       .get('/categorias')
-  //       .then((res) => {
-  //         return res.data;
-  //       })
-  //       .catch((error) => {
-  //         console.log(error);
-  //       });
-  //   },
 };

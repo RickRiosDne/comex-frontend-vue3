@@ -5,7 +5,7 @@ export interface Produto {
   nome: string;
   descricao: string;
   preco: number;
-  quantidadeEmEstoque: string;
+  quantidade_estoque: string;
   categoria: string;
   url?: string;
   criacao: string;
@@ -15,7 +15,7 @@ export const criarProduto = (
   nome: string,
   descricao: string,
   preco: number,
-  quantidadeEmEstoque: string,
+  quantidade_estoque: string,
   categoria: string,
   url: string
 ): Produto => {
@@ -24,7 +24,7 @@ export const criarProduto = (
     nome: nome,
     descricao: descricao,
     preco: preco,
-    quantidadeEmEstoque: quantidadeEmEstoque,
+    quantidade_estoque: quantidade_estoque,
     categoria: categoria,
     url: url,
     criacao: new Date().toISOString().substring(0, 10),
