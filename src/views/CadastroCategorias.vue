@@ -2,22 +2,34 @@
     import type { Categoria } from '@/models/Categoria.js';
     import { criarCategoria } from '@/models/Categoria.js';
     import IconDelete from '@/views/components/IconDelete.vue'
-    import { ref } from 'vue'
+    import { onMounted, ref } from 'vue'
+    import categoriasService from '@/services/categorias.service'
 
     const listaCategorias = ref<Categoria[]>([])
     let nomeCategoria = ''
 
-    function inserirCategoria(nome: string): void {
+    async function getCategorias() {
+        const categorias = await categoriasService.getCategorias()
+        listaCategorias.value = categorias
+    }
+
+    async function inserirCategoria(nome: string) {
         nomeCategoria = ''
-        listaCategorias.value.push(criarCategoria(nome))
-        // console.log(listaCategorias.value)
+        await categoriasService.insertCategorias(criarCategoria(nome))
+        await getCategorias()
+        // listaCategorias.value.push(criarCategoria(nome))
     }
 
-    function excluirCategoria(id: string): void {
-        let novaLista = listaCategorias.value.filter(objeto => objeto.id !== id)
-        listaCategorias.value= novaLista
+    async function excluirCategoria(id: string) {
+        await categoriasService.deleteCategorias(id)
+        await getCategorias()
+        // let novaLista = listaCategorias.value.filter(objeto => objeto.id !== id)
+        // listaCategorias.value= novaLista
     }
 
+    onMounted(() => {
+        getCategorias()
+    })
 </script>
 
 <template>

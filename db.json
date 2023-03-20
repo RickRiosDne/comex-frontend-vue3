@@ -1,0 +1,95 @@
+{
+  "clientes": [
+    {
+      "id": "ca53d0c6-edd6-4e3c-bf81-6157e9d7d646",
+      "nome": "jorge",
+      "sobrenome": "silva",
+      "cpf": "47398423861",
+      "telefone": "43243243243",
+      "endereco": {
+        "rua": "Rodovia José Simões Louro Júnior",
+        "numero": null,
+        "bairro": "Penteado",
+        "cidade": "Embu-Guaçu",
+        "estado": "SP",
+        "cep": "06924-760",
+        "complemento": null
+      },
+      "email": "jorge@jorgeq.com"
+    },
+    {
+      "_id": "fd2d741c-2087-4755-9adf-a58cb1e66281",
+      "nome": "cliente tal 1",
+      "sobrenome": "sobrenome tal",
+      "cpf": "47398423861",
+      "telefone": "43243243243",
+      "endereco": {
+        "rua": "Praça da Sé",
+        "numero": "1",
+        "bairro": "Sé",
+        "cidade": "São Paulo",
+        "estado": "SP",
+        "cep": "01001-000",
+        "complemento": "lado ímpar"
+      },
+      "email": "teste@teste.com",
+      "id": "D6Yo1Gb"
+    }
+  ],
+  "produtos": [
+    {
+      "id": "25d744de-0212-42c3-b430-4f43643e3e7f",
+      "nome": "teste",
+      "url": "https://acaonsfatima.org.br/wp-content/uploads/2021/09/informatica-conteudo-pagina-1.png",
+      "descricao": "desc",
+      "preco": 1,
+      "quantidade_estoque": 11,
+      "categoria": null,
+      "criacao": "2023-2-24"
+    },
+    {
+      "id": "e7762fbb-9037-4ecc-9acd-732374360bf6",
+      "nome": "teste 2",
+      "url": "https://acaonsfatima.org.br/wp-content/uploads/2021/09/informatica-conteudo-pagina-1.png",
+      "descricao": "desc",
+      "preco": 2,
+      "quantidade_estoque": 22,
+      "categoria": 1,
+      "criacao": "2023-2-24"
+    },
+    {
+      "id": "73647107-893d-4514-852a-a98912933fd7",
+      "nome": "teste 3",
+      "url": "",
+      "descricao": "desc",
+      "preco": 3,
+      "quantidade_estoque": 33,
+      "categoria": 3,
+      "criacao": "2023-2-24"
+    },
+    {
+      "id": "89f4b55e-6a72-43a8-bd4b-9198291dc05a",
+      "nome": "teste",
+      "url": "https://acaonsfatima.org.br/wp-content/uploads/2021/09/informatica-conteudo-pagina-1.png",
+      "descricao": "teste",
+      "preco": 12,
+      "quantidade_estoque": 2,
+      "categoria": "2",
+      "criacao": "2023-03-08"
+    }
+  ],
+  "categorias": [
+    {
+      "id": "9aee0eff-78d8-4690-a64f-e516654b7f68",
+      "nome": "teste 1",
+      "status": "ATIVO",
+      "criacao": "2023-02-23"
+    },
+    {
+      "id": "6a354416-e19a-47f4-88cf-c0c58b3a2177",
+      "nome": "teste 2",
+      "status": "ATIVO",
+      "criacao": "2023-02-27"
+    }
+  ]
+}
