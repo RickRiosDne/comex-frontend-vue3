@@ -3,7 +3,7 @@ import { onMounted, ref } from 'vue'
 import produtosService from '@/services/produtos.service'
 import type { Produto } from '@/models/Produto.js'
 
-let listaProdutos = ref<Produto[] | any>([])
+let listaProdutos = ref<Produto[]>([])
 
 async function getProdutos() {
     const produtos = await produtosService.getProdutos()
@@ -14,11 +14,12 @@ onMounted(() => {
     getProdutos()
 })
 
-function verifyUrl(item: string) {
-    if (item) {return item}
+function verifyUrl(item: Produto) {
+    if (item && item.url) {
+        return item.url
+    }
     return 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/ed/Item_sem_imagem.svg/498px-Item_sem_imagem.svg.png'
 }
-
 </script>
 
 <template>
@@ -64,7 +65,7 @@ function verifyUrl(item: string) {
         <div class="purchase mt-5">
             <div class="purchase-item" v-for="(item, index) in listaProdutos" :key="index">
                 <div class="ms-5 mt-3">
-                    <img class="imgs-purchase mb-4" :src="verifyUrl(item.url)">
+                    <img class="imgs-purchase mb-4" :src="verifyUrl(item)">
                     <p>Nome: {{item.nome}}<br>
                         Preço: {{item.preco}}</p>
                     <button class="btn-purchase mt-3 mb-3 p-2">Comprar</button>
