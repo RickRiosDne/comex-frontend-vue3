@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { criarCliente, type Endereco } from '@/models/Cliente.js';
+import clientesService from '@/services/clientes.service'
 import { ref } from 'vue';
 import type { Ref } from 'vue';
 
@@ -111,33 +112,20 @@ function adicionarCliente() {
         endereco as Endereco
     )
 
-    console.log(novoCliente)
+    // console.log(novoCliente)
 
-    // const cpfInput = document.getElementById('cpf');
-    // const cpfError = document.getElementById('cpf-error');
 
-    // if (!getThis.validarCpf(cpf)) {
-    //     cpfError.style.display = 'block';
-    //     cpfInput.classList.add('invalid');
-    // }  else {
-    //     cpfError.style.display = 'none';
-    //     cpfInput.classList.remove('invalid');
-    //     fetch('http://localhost:3000/clientes', {
-    //             method: 'POST', // or 'PUT'
-    //             headers: { 'Content-Type': 'application/json' },
-    //             body: JSON.stringify(novoCliente),
-    //         })
-    //         .then((response) => response.json())
-    //         .then((data) => {
-    //             console.log(`${data.nome}(CPF: ${data.cpf}) cadastrada com sucesso.`);
-    //         })
-    //         .catch((error) => {
-    //             console.error('Não foi possível cadastrar o cliente! Aguarde uns minutos e tente novamente.');
-    //         });
+    // let erroCpf: Ref<boolean> = ref(false);
 
-    // //   console.log('novoCliente', novoCliente)
-    // }
-}
+    // if (!validarCpf(String(inputCpf.value))){
+    //     erroCpf.value = true;
+    //   } else {
+    //     erroCpf.value = false;
+    //     clientesService.insertClientes(novoCliente);
+    //   }
+
+    }
+
 
 </script>
 
@@ -168,7 +156,7 @@ function adicionarCliente() {
                 <div class="col-6">
                     <label for="cpf" class="form-label">Cpf:</label>
                     <input v-mask="'###.###.###-##'" v-model="inputCpf" type="text" class="form-control" id="cpf" required>
-                    <span id="cpf-error" class="error-message" style="display:none">CPF inválido</span>
+                    <!-- <span v-if="erroCpf" id="cpf-error" class="error-message">CPF inválido</span> -->
                 </div>
                 <div class="col-6">
                     <label for="telefone" class="form-label">Telefone:</label>
