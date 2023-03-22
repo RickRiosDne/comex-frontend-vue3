@@ -7,6 +7,7 @@ import Home from '../views/Home.vue';
 import CadastroCategorias from '../views/CadastroCategorias.vue';
 import CadastroProdutos from '../views/CadastroProdutos.vue';
 import CadastroClientes from '../views/CadastroClientes.vue';
+import Carrinho from '../views/Carrinho.vue';
 
 const routes: RouteRecordRaw[] = [
   {
@@ -28,6 +29,11 @@ const routes: RouteRecordRaw[] = [
     path: '/clientes',
     name: 'CadastroClientes',
     component: CadastroClientes,
+  },
+  {
+    path: '/carrinho',
+    name: 'CadastroClientes',
+    component: Carrinho,
   },
 ];
 const router = createRouter({

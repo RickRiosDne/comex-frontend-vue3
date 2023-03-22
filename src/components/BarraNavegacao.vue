@@ -32,13 +32,15 @@ const produtos = carrinhoStore.produtos
                     <form class="pe-2">
                         <input class="form-control" type="search" placeholder="Pesquisar" aria-label="Search">
                     </form>
-                    <button type="button" class="btn btn-primary position-relative">
-                        <img src="@/assets/imgs/icons/carrinho.png" alt="icon-carrinho">
-                        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
-                            {{ produtos.length }}
-                            <!-- <span class="visually-hidden">unread messages</span> -->
-                        </span>
-                    </button>
+                    <RouterLink to="/carrinho">
+                        <button type="button" class="btn btn-primary position-relative">
+                            <img src="@/assets/imgs/icons/carrinho.png" alt="icon-carrinho">
+                            <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                                {{ produtos.length }}
+                                <!-- <span class="visually-hidden">unread messages</span> -->
+                            </span>
+                        </button>
+                    </RouterLink>
                     <img class="pe-1 m-2" src="@/assets/imgs/icons/user.png" alt="icon-usuario">
                 </div>
             </div>
