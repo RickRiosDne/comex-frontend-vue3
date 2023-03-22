@@ -4,11 +4,15 @@ import clientesService from '@/services/clientes.service'
 import { ref } from 'vue';
 import type { Ref } from 'vue';
 
+interface HTMLInputElementWithMask extends HTMLInputElement {
+  unmaskedValue: string;
+}
+
 const inputNome: Ref<HTMLInputElement | null> = ref(null);
 const inputSobrenome: Ref<HTMLInputElement | null> = ref(null);
 const inputEmail: Ref<HTMLInputElement | null> = ref(null);
 const inputTelefone: Ref<HTMLInputElement | null> = ref(null);
-const inputCpf: Ref<HTMLInputElement | null> = ref(null);
+const inputCpf: Ref<HTMLInputElement | null | HTMLInputElementWithMask> = ref(null);
 const inputCep: Ref<HTMLInputElement | null> = ref(null);
 
 const logradouro: Ref<HTMLInputElement | null> = ref(null);
@@ -117,7 +121,7 @@ async function adicionarCliente() {
         erroCpf.value = true;
       } else {
         erroCpf.value = false;
-        // console.log(novoCliente)
+        console.log('Cliente salvo com sucesso')
         await clientesService.insertClientes(novoCliente);
       }
 

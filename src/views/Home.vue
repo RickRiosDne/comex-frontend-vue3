@@ -2,12 +2,19 @@
 import { onMounted, ref } from 'vue'
 import produtosService from '@/services/produtos.service'
 import type { Produto } from '@/models/Produto.js'
+import { useCarrinhoStore } from '@/stores/carrinho.js'
+
+const carrinhoStore = useCarrinhoStore()
 
 let listaProdutos = ref<Produto[]>([])
 
 async function getProdutos() {
     const produtos = await produtosService.getProdutos()
     listaProdutos.value = produtos
+}
+
+function addProduto(item: object) {
+    carrinhoStore.incrementProduto(item)
 }
 
 onMounted(() => {
@@ -68,7 +75,7 @@ function verifyUrl(item: Produto) {
                     <img class="imgs-purchase mb-4" :src="verifyUrl(item)">
                     <p>Nome: {{item.nome}}<br>
                         Preço: {{item.preco}}</p>
-                    <button class="btn-purchase mt-3 mb-3 p-2">Comprar</button>
+                    <button class="btn-purchase mt-3 mb-3 p-2" @click="addProduto(item)">Comprar</button>
                 </div>
             </div>
         </div>
