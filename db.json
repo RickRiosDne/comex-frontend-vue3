@@ -18,22 +18,21 @@
       "email": "jorge@jorgeq.com"
     },
     {
-      "_id": "fd2d741c-2087-4755-9adf-a58cb1e66281",
-      "nome": "cliente tal 1",
-      "sobrenome": "sobrenome tal",
-      "cpf": "47398423861",
-      "telefone": "43243243243",
+      "id": "36a79061-a317-4258-92fb-abee32908425",
+      "nome": "FABIO",
+      "sobrenome": "COUTUA",
+      "cpf": "473.984.238-61",
+      "telefone": "(11)99802-9090",
       "endereco": {
-        "rua": "Praça da Sé",
-        "numero": "1",
-        "bairro": "Sé",
-        "cidade": "São Paulo",
+        "rua": "Rodovia José Simões Louro Júnior",
+        "numero": "22323232",
+        "bairro": "Penteado",
+        "cidade": "Embu-Guaçu",
         "estado": "SP",
-        "cep": "01001-000",
-        "complemento": "lado ímpar"
+        "cep": "06924-760",
+        "complemento": "Km 50, mercado paraíba"
       },
-      "email": "teste@teste.com",
-      "id": "D6Yo1Gb"
+      "email": "teste@teste.com"
     }
   ],
   "produtos": [

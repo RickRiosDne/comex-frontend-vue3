@@ -11,13 +11,14 @@ const inputTelefone: Ref<HTMLInputElement | null> = ref(null);
 const inputCpf: Ref<HTMLInputElement | null> = ref(null);
 const inputCep: Ref<HTMLInputElement | null> = ref(null);
 
-let logradouro: Ref<HTMLInputElement | null> = ref(null);
-let numero: Ref<HTMLInputElement | null> = ref(null);
-let complemento: Ref<HTMLInputElement | null> = ref(null);
-let uf: Ref<HTMLInputElement | null> = ref(null);
-let bairro: Ref<HTMLInputElement | null> = ref(null);
-let localidade: Ref<HTMLInputElement | null> = ref(null);
+const logradouro: Ref<HTMLInputElement | null> = ref(null);
+const numero: Ref<HTMLInputElement | null> = ref(null);
+const complemento: Ref<HTMLInputElement | null> = ref(null);
+const uf: Ref<HTMLInputElement | null> = ref(null);
+const bairro: Ref<HTMLInputElement | null> = ref(null);
+const localidade: Ref<HTMLInputElement | null> = ref(null);
 
+const erroCpf: Ref<boolean> = ref(false);
 
 function validarCpf(cpf: string): boolean {
         cpf = cpf.replace(/[^\d]+/g, ''); // Remove caracteres não numéricos
@@ -92,7 +93,7 @@ async function onblurCep() {
         }
 }
 
-function adicionarCliente() {
+async function adicionarCliente() {
     let endereco = {
         rua: String(logradouro.value),
         numero: String(numero.value),
@@ -112,19 +113,15 @@ function adicionarCliente() {
         endereco as Endereco
     )
 
-    // console.log(novoCliente)
+    if (!validarCpf(String(inputCpf.value))){
+        erroCpf.value = true;
+      } else {
+        erroCpf.value = false;
+        // console.log(novoCliente)
+        await clientesService.insertClientes(novoCliente);
+      }
 
-
-    // let erroCpf: Ref<boolean> = ref(false);
-
-    // if (!validarCpf(String(inputCpf.value))){
-    //     erroCpf.value = true;
-    //   } else {
-    //     erroCpf.value = false;
-    //     clientesService.insertClientes(novoCliente);
-    //   }
-
-    }
+}
 
 
 </script>
@@ -156,12 +153,12 @@ function adicionarCliente() {
                 <div class="col-6">
                     <label for="cpf" class="form-label">Cpf:</label>
                     <input v-mask="'###.###.###-##'" v-model="inputCpf" type="text" class="form-control" id="cpf" required>
-                    <!-- <span v-if="erroCpf" id="cpf-error" class="error-message">CPF inválido</span> -->
+                    <span v-if="erroCpf" id="cpf-error" class="error-message text-danger">CPF inválido</span>
                 </div>
                 <div class="col-6">
                     <label for="telefone" class="form-label">Telefone:</label>
-                    <input v-mask="'(##) #####-####'" v-model="inputTelefone" type="text" maxlength="14"
-                        class="form-control" id="telefone">
+                    <input v-mask="'(##)#####-####'" v-model="inputTelefone" type="text" maxlength="14" class="form-control"
+                        id="telefone">
                 </div>
             </div>
 
