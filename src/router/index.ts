@@ -1,9 +1,14 @@
-import { createRouter, createWebHistory } from 'vue-router';
+import {
+  createRouter,
+  createWebHistory,
+  type RouteRecordRaw,
+} from 'vue-router';
 import Home from '../views/Home.vue';
 import CadastroCategorias from '../views/CadastroCategorias.vue';
 import CadastroProdutos from '../views/CadastroProdutos.vue';
+import CadastroClientes from '../views/CadastroClientes.vue';
 
-const routes = [
+const routes: RouteRecordRaw[] = [
   {
     path: '/',
     name: 'Home',
@@ -18,6 +23,11 @@ const routes = [
     path: '/produtos',
     name: 'CadastroProdutos',
     component: CadastroProdutos,
+  },
+  {
+    path: '/clientes',
+    name: 'CadastroClientes',
+    component: CadastroClientes,
   },
 ];
 const router = createRouter({
