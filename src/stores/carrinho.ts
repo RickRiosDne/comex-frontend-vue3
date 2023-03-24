@@ -1,5 +1,5 @@
 import { defineStore } from 'pinia';
-import type { Carrinho } from '@/models/Carrinho.js';
+import type { Carrinho } from '@/interfaces/index';
 
 export const useCarrinhoStore = defineStore({
   // nome do módulo do store

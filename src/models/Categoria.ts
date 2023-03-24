@@ -1,11 +1,5 @@
 import { v4 as uuidv4 } from 'uuid';
-
-export interface Categoria {
-    id: string;
-    nome: string;
-    criacao: string;
-    status: string;
-}
+import type { Categoria } from '@/interfaces/index';
 
 export const criarCategoria = (nome: string): Categoria => {
     return {

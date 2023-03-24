@@ -1,8 +1,7 @@
 <script setup lang="ts">
 import { onMounted, ref } from 'vue'
 import produtosService from '@/services/produtos.service'
-import type { Produto } from '@/models/Produto.js'
-import type { Carrinho } from '@/models/Carrinho.js'
+import type { Produto, Carrinho } from '@/interfaces/index'
 import { useCarrinhoStore } from '@/stores/carrinho.js'
 
 const carrinhoStore = useCarrinhoStore()
@@ -12,10 +11,6 @@ let listaProdutos = ref<Produto[]>([])
 async function getProdutos() {
     const produtos = await produtosService.getProdutos()
     listaProdutos.value = produtos
-}
-
-function addProduto(item: Carrinho) {
-    carrinhoStore.incrementProduto(item)
 }
 
 onMounted(() => {
@@ -76,7 +71,8 @@ function verifyUrl(item: Produto) {
                     <img class="imgs-purchase mb-4" :src="verifyUrl(item)">
                     <p>Nome: {{item.nome}}<br>
                         Preço: {{item.preco}}</p>
-                    <button class="btn-purchase mt-3 mb-3 p-2" @click="addProduto(item)">Comprar</button>
+                    <button class="btn-purchase mt-3 mb-3 p-2"
+                        @click="carrinhoStore.incrementProduto(item)">Comprar</button>
                 </div>
             </div>
         </div>

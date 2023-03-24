@@ -1,7 +1,8 @@
 <script setup lang="ts">
-import { criarCliente, type Endereco } from '@/models/Cliente.js';
+import { criarCliente } from '@/models/Cliente.js';
 import clientesService from '@/services/clientes.service'
 import { ref } from 'vue';
+import type { Endereco } from '@/interfaces/index'
 import type { Ref } from 'vue';
 
 interface HTMLInputElementWithMask extends HTMLInputElement {

@@ -75,20 +75,36 @@
       "quantidade_estoque": 2,
       "categoria": "2",
       "criacao": "2023-03-08"
+    },
+    {
+      "id": "01a3757a-7358-4ffa-bf15-5b36f8e0ad47",
+      "nome": "Moto g teste",
+      "descricao": "cel",
+      "preco": 12,
+      "quantidade_estoque": 12,
+      "categoria": "2",
+      "url": "dsasd",
+      "criacao": "2023-03-24"
     }
   ],
   "categorias": [
     {
-      "id": "9aee0eff-78d8-4690-a64f-e516654b7f68",
-      "nome": "teste 1",
-      "status": "ATIVO",
-      "criacao": "2023-02-23"
+      "id": "de68771d-fccb-4912-a353-dd4dddeef138",
+      "nome": "categoria 1",
+      "criacao": "2023-03-24",
+      "status": "Ativa"
     },
     {
-      "id": "6a354416-e19a-47f4-88cf-c0c58b3a2177",
-      "nome": "teste 2",
-      "status": "ATIVO",
-      "criacao": "2023-02-27"
+      "id": "445d7bdf-ff1e-457a-a597-05fe372229fa",
+      "nome": "categoria 2",
+      "criacao": "2023-03-24",
+      "status": "Ativa"
+    },
+    {
+      "id": "d1fe6ea1-3435-4730-ad39-965ce6874db6",
+      "nome": "categoria 3",
+      "criacao": "2023-03-24",
+      "status": "Ativa"
     }
   ]
 }

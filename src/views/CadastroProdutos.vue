@@ -5,20 +5,20 @@ import produtosService from '@/services/produtos.service'
 let produto = {
   nome: '',
   descricao: '',
-  preco: '',
-  quantidade_estoque: '',
+  preco: null,
+  quantidade_estoque: null,
   categoria: '',
-  url: ''
+  url: null
 }
 
 async function salvaProduto(produto: any) {
     const newProduto = criarProduto(
         produto.nome,
         produto.descricao,
-        produto.preco,
-        produto.quantidade_estoque,
+        Number(produto.preco),
+        Number(produto.quantidade_estoque),
         produto.categoria,
-        produto.url
+        produto.url!
     )
     await produtosService.insertProdutos(newProduto)
 }

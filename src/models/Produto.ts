@@ -1,21 +1,11 @@
 import { v4 as uuidv4 } from 'uuid';
-
-export interface Produto {
-  id: string;
-  nome: string;
-  descricao: string;
-  preco: number;
-  quantidade_estoque: string;
-  categoria: string;
-  url?: string;
-  criacao: string;
-}
+import type { Produto } from '@/interfaces/index';
 
 export const criarProduto = (
   nome: string,
   descricao: string,
   preco: number,
-  quantidade_estoque: string,
+  quantidade_estoque: number,
   categoria: string,
   url: string
 ): Produto => {
