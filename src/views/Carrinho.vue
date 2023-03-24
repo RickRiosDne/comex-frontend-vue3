@@ -4,14 +4,6 @@ import { useCarrinhoStore } from '@/stores/carrinho.js'
 const carrinhoStore = useCarrinhoStore()
 const produtos = carrinhoStore.produtos
 
-interface Produto {
-  preco: number
-}
-
-function precoTotal(): number {
-    return produtos.reduce((previous, current) => previous + current.preco, 0)
-}
-
 </script>
 
 <template>
@@ -31,7 +23,7 @@ function precoTotal(): number {
                     <td>{{item.preco}}</td>
                 </tr>
                 <tr>
-                    <td colspan="4" class="text-end">Total: {{ precoTotal() }}</td>
+                    <td colspan="4" class="text-end">Total: {{ carrinhoStore.precoTotal }}</td>
                 </tr>
             </tbody>
         </table>

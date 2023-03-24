@@ -2,6 +2,7 @@
 import { onMounted, ref } from 'vue'
 import produtosService from '@/services/produtos.service'
 import type { Produto } from '@/models/Produto.js'
+import type { Carrinho } from '@/models/Carrinho.js'
 import { useCarrinhoStore } from '@/stores/carrinho.js'
 
 const carrinhoStore = useCarrinhoStore()
@@ -13,7 +14,7 @@ async function getProdutos() {
     listaProdutos.value = produtos
 }
 
-function addProduto(item: object) {
+function addProduto(item: Carrinho) {
     carrinhoStore.incrementProduto(item)
 }
 
