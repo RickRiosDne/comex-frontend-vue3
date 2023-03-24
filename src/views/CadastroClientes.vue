@@ -118,12 +118,11 @@ async function adicionarCliente() {
         erroCpf.value = true;
       } else {
         erroCpf.value = false;
-        console.log('Cliente salvo com sucesso')
         await clientesService.insertClientes(novoCliente);
+        console.log('Cliente salvo com sucesso')
       }
 
 }
-
 
 </script>
 

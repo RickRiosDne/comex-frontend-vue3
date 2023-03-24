@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { onMounted, ref } from 'vue'
 import produtosService from '@/services/produtos.service'
-import type { Produto, Carrinho } from '@/interfaces/index'
+import type { Produto } from '@/interfaces/index'
 import { useCarrinhoStore } from '@/stores/carrinho.js'
 
 const carrinhoStore = useCarrinhoStore()
