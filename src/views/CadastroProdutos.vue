@@ -18,7 +18,7 @@ async function salvaProduto(produto: any) {
         Number(produto.preco),
         Number(produto.quantidade_estoque),
         produto.categoria,
-        produto.url!
+        produto.url
     )
     await produtosService.insertProdutos(newProduto)
 }

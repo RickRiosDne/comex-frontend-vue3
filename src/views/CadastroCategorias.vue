@@ -1,5 +1,5 @@
 <script setup lang="ts">
-    import type { Categoria } from '@/models/Categoria.js';
+    import type { Categoria } from '@/interfaces/index';
     import { criarCategoria } from '@/models/Categoria.js';
     import IconDelete from '@/views/components/IconDelete.vue'
     import { onMounted, ref } from 'vue'

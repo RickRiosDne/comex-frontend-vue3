@@ -5,15 +5,11 @@ import { ref } from 'vue';
 import type { Endereco } from '@/interfaces/index'
 import type { Ref } from 'vue';
 
-interface HTMLInputElementWithMask extends HTMLInputElement {
-  unmaskedValue: string;
-}
-
 const inputNome: Ref<HTMLInputElement | null> = ref(null);
 const inputSobrenome: Ref<HTMLInputElement | null> = ref(null);
 const inputEmail: Ref<HTMLInputElement | null> = ref(null);
 const inputTelefone: Ref<HTMLInputElement | null> = ref(null);
-const inputCpf: Ref<HTMLInputElement | null | HTMLInputElementWithMask> = ref(null);
+const inputCpf: Ref<HTMLInputElement | null> = ref(null);
 const inputCep: Ref<HTMLInputElement | null> = ref(null);
 
 const logradouro: Ref<HTMLInputElement | null> = ref(null);

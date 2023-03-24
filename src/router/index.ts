@@ -32,7 +32,7 @@ const routes: RouteRecordRaw[] = [
   },
   {
     path: '/carrinho',
-    name: 'CadastroClientes',
+    name: 'Carrinho',
     component: Carrinho,
   },
 ];
